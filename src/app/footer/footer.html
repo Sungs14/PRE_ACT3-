@@ -1,0 +1,29 @@
+<footer>
+  <section>
+    <h2 class="section-title">Technical Proficiencies</h2>
+    <div class="groups">
+      @for (group of proficiencies(); track group.category) {
+        <div class="group">
+          <h3>{{ group.category }}</h3>
+          <ul>
+            @for (item of group.items; track item.tool) {
+              <li>
+                <span class="tool">{{ item.tool }}</span>
+                <span class="level">
+                  <span class="meter" aria-hidden="true">
+                    @for (n of bars; track n) {
+                      <span class="bar" [class.on]="n <= score(item.level)"></span>
+                    }
+                  </span>
+                  {{ item.level }}
+                </span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </section>
+
+  <p class="copyright">&copy; {{ year }} {{ fullName() }}. Built with Angular.</p>
+</footer>

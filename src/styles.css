@@ -1,0 +1,77 @@
+/* Fonts: Cormorant Garamond for headings, Lora for body text. Falls back to Georgia offline. */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Lora:wght@400;600&display=swap");
+
+/*
+  Design tokens, based on the BUCK-TICK "Romance" cover:
+  midnight indigo, steel grey, ghost white, and one blood-red accent.
+  Change the colors and fonts here and the whole site follows.
+*/
+:root {
+  color-scheme: dark;
+
+  --surface: #151424;      /* page background */
+  --card: #1e1d30;         /* panels and cards */
+  --tint: #2a2838;         /* hover and message backgrounds */
+  --line: #393744;         /* borders and dividers */
+
+  --ink: #eceff0;          /* body text */
+  --heading: #f4f6f6;      /* headings */
+  --muted: #98a6aa;        /* secondary text */
+
+  --primary: #8f2236;      /* filled buttons (white text on top) */
+  --primary-dark: #701a2a;
+  --on-primary: #ffffff;
+  --accent: #cf3a56;       /* lines, bars, borders */
+  --accent-text: #f0929f;  /* links and small colored text */
+
+  --check-a: #0f0e1b;      /* checkerboard strip, like the cover's floor */
+  --check-b: #4a525b;
+
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 420px at 50% 0, #2a2838 0%, transparent 75%),
+    var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+section {
+  margin: 30px 0;
+}
+
+/* Shared heading style, used by several components. */
+.section-title {
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  color: var(--heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Visible keyboard focus everywhere. */
+:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

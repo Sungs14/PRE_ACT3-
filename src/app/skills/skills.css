@@ -1,0 +1,37 @@
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--card);
+  color: var(--ink);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.skill:hover {
+  border-color: var(--accent);
+  background: var(--tint);
+}
+
+.skill.selected {
+  border-color: var(--accent);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+}
+
+.skill.selected:hover {
+  background: var(--primary-dark);
+}

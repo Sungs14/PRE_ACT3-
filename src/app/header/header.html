@@ -1,0 +1,16 @@
+<header class="intro">
+  <div class="avatar" aria-hidden="true">{{ initials() }}</div>
+  <div>
+    <h1>{{ fullName() }}</h1>
+    <p class="contact">
+      <span>{{ location() }}</span>
+      <span>{{ phone() }}</span>
+      <a [href]="'mailto:' + email()">{{ email() }}</a>
+    </p>
+  </div>
+</header>
+
+<section>
+  <h2 class="section-title">Personal Profile</h2>
+  <p class="profile">{{ profile() }}</p>
+</section>

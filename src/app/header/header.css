@@ -1,0 +1,92 @@
+:host {
+  display: block;
+}
+
+.intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 30px 32px 46px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+}
+
+/* Checkerboard floor along the bottom edge. */
+.intro::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 14px;
+  background: conic-gradient(
+      var(--check-a) 25%,
+      var(--check-b) 0 50%,
+      var(--check-a) 0 75%,
+      var(--check-b) 0
+    )
+    0 0 / 28px 28px;
+}
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--heading);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  margin: 0 0 6px;
+  color: var(--heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 18px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.contact a {
+  color: var(--accent-text);
+  text-underline-offset: 3px;
+}
+
+.contact a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.profile {
+  margin: 0;
+  max-width: 65ch;
+}
+
+@media (max-width: 600px) {
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 18px 40px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+}
